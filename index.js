@@ -116,8 +116,7 @@ app.post('/upload', (req, res) => {
       return res.status(400).send('Selected subtitle format is not supported.');
     }
 
-    const ffmpegCommand = `ffmpeg -i "${videoPath}" -i "${logoPath}" -filter_complex "[1][0]scale2ref=w=iw/5:h=ow/mdar[logo][video];[video][logo]overlay=W-w-10:10,subtitles=${subtitlesPath}:force_style='FontName=${fullFontPath}'" "${outputPath}"`;
-
+    const ffmpegCommand = `ffmpeg -i "${videoPath}" -i "${logoPath}" -filter_complex "[1][0]scale2ref=w=iw/5:h=ow/mdar[logo][video];[video][logo]overlay=W-w-10:10,subtitles=${subtitlesPath}:fontfile='${fullFontPath}'" "${outputPath}"`;
     executeFfmpeg(ffmpegCommand);
   };
 
@@ -143,8 +142,7 @@ app.post('/upload', (req, res) => {
       return res.status(400).send('Selected subtitle format is not supported.');
     }
 
-    const ffmpegCommand = `ffmpeg -i "${videoPath}" -vf "subtitles=${subtitlesPath}:force_style='FontName=${fullFontPath}'" "${outputPath}"`;
-
+    const ffmpegCommand = `ffmpeg -i "${videoPath}" -vf "subtitles=${subtitlesPath}:fontfile='${fullFontPath}'" "${outputPath}"`;
     executeFfmpeg(ffmpegCommand);
   };
 
