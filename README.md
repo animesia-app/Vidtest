@@ -55,7 +55,7 @@ VideoBurner is a web application that allows users to upload a video and a subti
 **Deploy To Render.com For Free :**
 <div align="center">
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/est-anime/vidburner_2.0)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/animesia-app/Vidtest)
 
 </div>
 
